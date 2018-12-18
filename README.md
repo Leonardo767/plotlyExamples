@@ -1,9 +1,9 @@
 # plotlyExamples
 
 
-The following file attempts to visualize how the output layer of a convolutional neural network block can change according to parameters of the convolution matrices.
+The following file attempts to visualize how the output layer of a convolutional neural network block can change according to hyperparameters of the convolution matrices.
 
-These parameters can be, but are not limited to:
+These hyperparameters can be, but are not limited to:
 * stride
 * filter size
 * padding
