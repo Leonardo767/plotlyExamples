@@ -28,7 +28,7 @@ def unpackXYZcoords(A):
 
 
 # Build A, which stores x,y values as index, and z as value
-dim = 10
+dim = 15
 A = np.zeros((dim, dim))
 
 for i in range(A.shape[0]):
@@ -40,6 +40,7 @@ print(A)
 x1,y1,z1 = unpackXYZcoords(A)
 
 # build plot
+"""
 trace1 = go.Scatter3d(
     x=x1,
     y=y1,
@@ -64,6 +65,44 @@ layout = go.Layout(
         t=0
     )
 )
+
 fig = go.Figure(data=data, layout=layout)
+"""
+
+data = go.Surface(
+        z=A
+        )
+"""
+data = go.mesh3d(x=(x1),
+                 y=(y1),
+                 z=(z1),
+                 opacity=0.5,
+                 color='rgba(244,22,100,0.6)'
+                 )
+"""
+
+layout = go.Layout(
+    title='Multiplication Table',
+    xaxis=dict(
+        title='Factor'
+    ),
+    yaxis=dict(
+        title='Factor'
+    ),
+#    zaxis=dict(
+#        title='Product'
+#    ),
+    autosize=True,  # we want this to fill the screen
+#    width=500,
+#    height=500,
+    margin=dict(
+        l=65,
+        r=50,
+        b=65,
+        t=90
+    )
+)
+fig = go.Figure(data=[data], layout=layout)
+
 
 plot(fig)
